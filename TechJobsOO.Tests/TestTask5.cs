@@ -2,8 +2,8 @@
 namespace TechJobsOO.Tests
 {
 	[TestClass]
-	public class TestTask5
-	{
+    public class TestTask5
+    {
         //Task 5 Tests used to verify that students are testing their custom ToString method.
         //Uses jobs from the Job class.
         //Tests are numbered.
@@ -36,6 +36,7 @@ namespace TechJobsOO.Tests
             Assert.AreEqual("true", existsCheck, "'TestToStringStartsAndEndsWithNewLine' not created");
         }
 
+
         [TestMethod]  //2
         public void Test_TestToString_Starts_And_Ends_With_NewLine()
         {
@@ -55,6 +56,7 @@ namespace TechJobsOO.Tests
         }
 
         //Unit Test 2: TestToStringContainsCorrectLabelsAndData -----------------------
+
 
         [TestMethod]  //3
         public void TestToStringContainsCorrectLabelsAndData_Exists()
@@ -86,17 +88,20 @@ namespace TechJobsOO.Tests
         {
             //comparing output to a text file.
             //id numbers may get a little wonky
+
             //setup
             var stringWriter = new StringWriter();
             Console.SetOut(stringWriter);
             var job = new RunTechJobs();
             job.RunProgram();
             var output = stringWriter.ToString();
+
             //verify
             Assert.IsTrue(output.Contains($"Name: Product tester") && output.Contains("Employer: ACME") && output.Contains("Location: Desert") && output.Contains("Position Type: Quality control") && output.Contains("Core Competency: Persistence"));
         }
 
         //Unit Test 3: TestToStringHandlesEmptyField --------------------
+
 
         [TestMethod] //5
         public void TestToStringHandlesEmptyField_Exists()
@@ -128,6 +133,7 @@ namespace TechJobsOO.Tests
         {
             //comparing output to a text file.
             //id numbers may get a little wonky
+
             string text = System.IO.File.ReadAllText("EmptyFieldTest.txt").ToString();
             var stringWriter = new StringWriter();
             Console.SetOut(stringWriter);
@@ -139,8 +145,9 @@ namespace TechJobsOO.Tests
             Assert.AreEqual(text, output, "Empty string handling error");
         }
 
-        TODO: Task 5: Remove this line to uncomment the tests*/
+    TODO: Task 5: Remove this line to uncomment the tests*/
 
     }
+
 }
 
