@@ -6,12 +6,14 @@ namespace TechJobsOO.Tests
 	{
         //Testing the new Job class.  Tests are numbered.
 
-        /* TODO: Remove this line to uncomment the tests
-
+        /* TODO: Task 3: Remove this line to uncomment the tests
+          
+     
         [TestMethod]    //1
         public void Test_JobClass_Has_No_Arg_Constructor()
         {
-            Type jobType = typeof(TechJob);
+            //setup
+            Type jobType = typeof(Job);
             ConstructorInfo[] constructorInfos = jobType.GetConstructors();
             List<string> conNames = new List<string>();
             string nameCheck = "No Arg Constructor";
@@ -20,7 +22,6 @@ namespace TechJobsOO.Tests
             foreach (var name in constructorInfos)
             {
                 conNames.Add(name.ToString());
-
             }
 
             foreach (string name in conNames)
@@ -40,9 +41,8 @@ namespace TechJobsOO.Tests
         [TestMethod] //2
         public void Test_No_Arg_Constructor_Sets_Unique_Id()
         {
-            TechJob testJob1 = new TechJob();
-            TechJob testJob2 = new TechJob();
-
+            Job testJob1 = new Job();
+            Job testJob2 = new Job();
             Assert.AreNotEqual(testJob1, testJob2, "Unique Id Test");
             Assert.AreEqual(testJob2, testJob2, "Should have same Id");
         }
@@ -52,7 +52,7 @@ namespace TechJobsOO.Tests
         public void Test_JobClass_Has_Second_Constructror()
         {
             //setup
-            Type jobType = typeof(TechJob);
+            Type jobType = typeof(Job);
             ConstructorInfo[] constructorInfos = jobType.GetConstructors();
             List<string> conNames = new List<string>();
             string nameCheck = "Second Constructor";
@@ -65,7 +65,7 @@ namespace TechJobsOO.Tests
 
             foreach (string name in conNames)
             {
-                if (name.Contains("Void .ctor(System.String, TechJobsOO.Employer,"))
+                if (name.Contains("Void .ctor(System.String, TechJobsOOAutoGraded6.Employer,"))
                 {
                     existsCheck += "Second Constructor";
                     break;
@@ -81,8 +81,8 @@ namespace TechJobsOO.Tests
         public void Test_JobClass_Has_Accessors()
         {
             //setup
-            TechJob testJob1 = new TechJob("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-            TechJob testJob2 = new TechJob("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            Job testJob1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            Job testJob2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
             //verify 
             Assert.AreEqual(testJob1.Name, "Product tester", "Testing Job Name");
@@ -98,12 +98,10 @@ namespace TechJobsOO.Tests
         public void Test_Equals_Method_Setup()
         {
             //setup
-            TechJob testJob1 = new TechJob("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-            TechJob testJob2 = new TechJob("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-
-            MethodInfo mInfo = typeof(TechJob).GetMethod("Equals");
+            Job testJob1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            Job testJob2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            MethodInfo mInfo = typeof(Job).GetMethod("Equals");
             MethodBody mBody = mInfo.GetMethodBody();
-
             int lviCount = mBody.LocalVariables.Count;
             string mName = mInfo.ReflectedType.Name;
             string mGBD = mInfo.GetBaseDefinition().ReflectedType.Name;
@@ -122,10 +120,9 @@ namespace TechJobsOO.Tests
         public void Test_GetHashCode_Setup()
         {
             //setup
-            TechJob testJob1 = new TechJob("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-            TechJob testJob2 = new TechJob("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-
-            MethodInfo mInfo = typeof(TechJob).GetMethod("GetHashCode");
+            Job testJob1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            Job testJob2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            MethodInfo mInfo = typeof(Job).GetMethod("GetHashCode");
             MethodBody mBody = mInfo.GetMethodBody();
             int localCount = mBody.LocalVariables.Count;
 
@@ -136,7 +133,7 @@ namespace TechJobsOO.Tests
             Assert.AreNotEqual(testJob1.GetHashCode(), testJob2.GetHashCode(), "GetHashCode output test");
         }
 
-        TODO: Remove this line to uncomment the tests */
+        TODO: Task 3: Remove this line to uncomment the tests */
     }
 }
 

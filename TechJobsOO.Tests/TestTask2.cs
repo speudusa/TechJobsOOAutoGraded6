@@ -6,9 +6,9 @@ namespace TechJobsOO.Tests
 	{
         //This class tests the setup of Location, CoreCompetency, and PositionType Classes.
 
-        // Testing Location --------------------------------------------------------
+        /* TODO: Task 2: Remove this line to uncomment the tests
 
-        /* TODO: Remove this line to uncomment the tests
+        // Testing Location --------------------------------------------------------
 
         [TestMethod] //1
         public void Test_Second_Location_Constructor_Exists()
@@ -22,7 +22,6 @@ namespace TechJobsOO.Tests
             foreach (var name in constructorInfos)
             {
                 conNames.Add(name.ToString());
-
             }
 
             foreach (string name in conNames)
@@ -38,7 +37,7 @@ namespace TechJobsOO.Tests
             Assert.AreEqual(existsCheck, nameCheck, "No Second Constructor exists");
         }
 
-        
+
         [TestMethod] //2
         public void Test_Second_Location_Constructor_Initializes_Value()
         {
@@ -63,6 +62,7 @@ namespace TechJobsOO.Tests
             Assert.IsFalse(testLocation.Id == 4, "Second constructor passes value to Id. Is this desirable?");
         }
 
+
         // Testing CoreCompetency --------------------------------------------------------
 
         [TestMethod] //4
@@ -71,7 +71,6 @@ namespace TechJobsOO.Tests
             //setup
             CoreCompetency testComp = new CoreCompetency("Persistence");
             CoreCompetency testComp2 = new CoreCompetency("Persistence");
-
             Type ccType = typeof(CoreCompetency);
             MemberInfo[] memberInfos = ccType.GetMembers();
             string nameCheck = "get_Id";
@@ -91,6 +90,7 @@ namespace TechJobsOO.Tests
             Assert.AreEqual("true", existsCheck, "CoreComp getter does not exist");
             Assert.AreNotEqual(testComp.Id, testComp2.Id, "Not able to get ids for CoreComp objects");
         }
+
 
         [TestMethod] //5
         public void Test_CoreCompetency_Has_No_Id_Setter_SetUp()
@@ -113,6 +113,7 @@ namespace TechJobsOO.Tests
             Assert.AreEqual("false", existsCheck, "CoreComp should not have a setter");
         }
 
+
         // Testing PositionType --------------------------------------------------------
 
         [TestMethod] //6
@@ -121,10 +122,8 @@ namespace TechJobsOO.Tests
             // set up
             PositionType testPosition = new PositionType("Quality Control");
             PositionType testPosition2 = new PositionType("Quality Control");
-
             MethodInfo mInfo = typeof(PositionType).GetMethod("Equals");
             MethodBody mBody = mInfo.GetMethodBody();
-
             int lviCount = mBody.LocalVariables.Count;
             string mName = mInfo.ReflectedType.Name;
             string mGBD = mInfo.GetBaseDefinition().ReflectedType.Name;
@@ -145,7 +144,6 @@ namespace TechJobsOO.Tests
             // set up
             PositionType testPosition = new PositionType("Quality Control");
             PositionType testPosition2 = new PositionType("Quality Control");
-
             MethodInfo mInfo = typeof(PositionType).GetMethod("GetHashCode");
             MethodBody mBody = mInfo.GetMethodBody();
             int localCount = mBody.LocalVariables.Count;
@@ -163,7 +161,6 @@ namespace TechJobsOO.Tests
         {
             //setup
             PositionType testPosition = new PositionType("Quality Control");
-
             MethodInfo mInfo = typeof(PositionType).GetMethod("ToString");
             MethodBody mBody = mInfo.GetMethodBody();
             int localCount = mBody.LocalVariables.Count;
@@ -175,7 +172,8 @@ namespace TechJobsOO.Tests
             Assert.AreEqual(testPosition.Value.ToString(), "Quality Control", "ToString does not return same output as set value");
         }
 
-       TODO:  Remove this line to uncomment the tests */
+
+        TODO: Task 2: Remove this line to uncomment the tests */
 
     }
 }
