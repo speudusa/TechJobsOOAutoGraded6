@@ -10,7 +10,7 @@ namespace TechJobsOO.Tests
 
         /*TODO: Task 5: Remove this line to uncomment the tests
 
-        //Unit Test 1:  TestToStringStartsAndEndsWithNewLine  -----------------------
+        //Unit Test 1:  TestToStringStartsAndEndsWithNewLine  --------------------------
 
         [TestMethod]  //1
         public void TestToStringStartsAndEndsWithNewLineExists()
